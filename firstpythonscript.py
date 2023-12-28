@@ -2,8 +2,11 @@
 import numpy as np
 import sympy as sp
 
-x = sp.symbols('x')
+x ,t = sp.symbols('x t')
 
-poly = sp.expand((x-2)*(x+3))
+poly = sp.expand((x-2)*(t+3))
 
-print(poly)
+print(poly.subs({x:2,t:1}))
+
+# Eulers Method w/ User's Choice of ODE
+
