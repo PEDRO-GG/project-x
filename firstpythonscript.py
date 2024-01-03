@@ -2,7 +2,7 @@
 import numpy as np
 import sympy as sp
 
-t, y = sp.symbols("y t")
+t, y = sp.symbols("t y")
 
 UserODE = input("Enter ODE (in terms of t & y): y' =  ")
 
