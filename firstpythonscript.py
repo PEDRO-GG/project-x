@@ -36,13 +36,5 @@ for i in t_:
 
 print(" at t = " + str(yoft) + ", y(" + str(yoft) + ")=" + str(yn)  )
 
-
-
-
-
-
-
-
-
 # Eulers Method w/ User's Choice of ODE
 
