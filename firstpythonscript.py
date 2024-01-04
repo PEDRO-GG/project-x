@@ -1,5 +1,5 @@
 
-import math as m
+
 import numpy as np
 import sympy as sp
 
@@ -9,8 +9,8 @@ t, y = sp.symbols("t y")
 UserODE = input("Enter ODE (in terms of t & y): y' =  ")
 
 if 'e' in UserODE:
-    ModUserODE = UserODE.replace('e',str(sp.E))
-    ODE = sp.sympify(ModUserODE)
+    ModUserODE = UserODE.replace('e',str(sp.E))  # If D.E has an Eulers Number,
+    ODE = sp.sympify(ModUserODE)                 # then it'll adjust to eval. e
 else:
     ODE = sp.sympify(UserODE)
 
@@ -18,8 +18,8 @@ variables = (ODE.free_symbols)
 
 
 if t in variables and y in variables:
-    t0= float(f"{float(input('write an initial point for t(to): ')):.{4}f}")
-    y0= float(f"{float(input('write an initial point for y(yo): ')):.{4}f}")
+    t0= float(f"{float(input('write the initial point, t0 = ')):.{4}f}")
+    y0= float(f"{float(input('And now y(t0) = y0 = ')):.{4}f}")
     InitODE = ODE.subs({t:t0,y:y0})
 
 # Euler's method
