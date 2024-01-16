@@ -9,8 +9,6 @@ t, y = sp.symbols("t y")
 
 
 
-
-
 # Testing EulerMethod Function
 # 1. y' = t - y + 1 w/ y(0) = 1, where we want y(2)  
 t0_1 = 0
