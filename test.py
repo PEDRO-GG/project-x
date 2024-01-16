@@ -1,18 +1,10 @@
 
 import numpy as np
 import sympy as sp
-import math as m
+from EulerMethod import EulersMethod
+
 
 t, y = sp.symbols("t y")
-ode = t + y -1
-
-def EulersMethod(t_n,h,y0,ode):
-    for i in t_n:
-        yn = y0 + h * ode.subs({t:i,y:y0})
-        y0 = yn
-    return yn
-
-# Error Preference
 
 
 
@@ -20,7 +12,7 @@ def EulersMethod(t_n,h,y0,ode):
 
 
 # Testing EulerMethod Function
-# 2. y' = t - y + 1 w/ y(0) = 1, where we want y(2)  
+# 1. y' = t - y + 1 w/ y(0) = 1, where we want y(2)  
 t0_1 = 0
 y0_1 = 1
 yt_1 = 3
@@ -48,7 +40,7 @@ if test1 != proofof1:
 else:
     print('test 1 succesful')
 
-# 1. y' = (3t^2 + 2t - 6)/2y w/ y(1) = 3, where we want y(2)  
+# 2. y' = (3t^2 + 2t - 6)/2y w/ y(1) = 3, where we want y(2)  
 t0_2 = 1
 y0_2 = 3
 yt_2 = 2
@@ -67,7 +59,7 @@ else:
     ODE2 = sp.sympify(ODE_2)
     ODESOLN2 = sp.sympify(ODESOLN_2)
 
-print(ODESOLN2.subs({t:2}))
+
 test2 = float(f"{EulersMethod(t_n2, h2, y0_2, ODE2):.{3}f}")
 proofof2 = float(f"{ODESOLN2.subs({t:(yt_2)}):.{3}f}")
 
@@ -76,6 +68,7 @@ if test2 != proofof2:
     print("test 2 fail")
 else:
     print('test 2 succesful')
+
 
 
 
