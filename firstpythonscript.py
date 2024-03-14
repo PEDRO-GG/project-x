@@ -2,6 +2,7 @@
 
 import numpy as np
 import sympy as sp
+from test import EulersMethod
 
 t, y = sp.symbols("t y")
 
@@ -20,7 +21,7 @@ variables = (ODE.free_symbols)
 if t in variables and y in variables:
     t0= float(f"{float(input('write the initial point, t0 = ')):.{4}f}")
     y0= float(f"{float(input('And now y(t0) = y0 = ')):.{4}f}")
-    InitODE = ODE.subs({t:t0,y:y0})
+    
 
 # Euler's method
 
@@ -28,13 +29,11 @@ if t in variables and y in variables:
 yoft = float(f"{float(input('Up to what y(t) do you want an answer?(choose t for y(t)): ')):.{4}f}")
 h = float(f"{float(input('what step size do you want?: ')):.{4}f}")
 
-t_ = np.arange(t0, yoft + h ,h)
+t_n = np.arange(t0, yoft + h ,h)
 
-for i in t_:
-    yn = y0 + h * ODE.subs({t:i,y:y0})
-    y0 = yn
+EulersMethod(t_n,h,y0,ODE)
 
-print(" at t = " + str(yoft) + ", y(" + str(yoft) + ")=" + str(yn)  )
+print(" at t = " + str(yoft) + ", y(" + str(yoft) + ")=" + str(EulersMethod(t_n,h,y0,ODE))  )
 
 # Eulers Method w/ User's Choice of ODE
 
