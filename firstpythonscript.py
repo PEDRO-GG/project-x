@@ -18,6 +18,7 @@ else:
 variables = (ODE.free_symbols)
 
 
+
 if t in variables or y in variables:
     t0= float(f"{float(input('write the initial point, t0 = ')):.{4}f}")
     y0= float(f"{float(input('And now y(t0) = y0 = ')):.{4}f}")
@@ -56,9 +57,3 @@ for i in t_:
     ytrue = true.subs({t:i})
     ypts.append((ytrue))
 
-mp.plot(t_,ysol,label= "Numerical Solution")
-mp.plot(t_,ypts,label= "True Solutionn")
-mp.xlabel("t")
-mp.ylabel("y")
-mp.legend()
-mp.show()
