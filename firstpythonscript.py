@@ -56,8 +56,8 @@ for i in t_:
     ytrue = true.subs({t:i})
     ypts.append((ytrue))
 
-mp.plot(t_,ysol,label= "Numerical Soln")
-mp.plot(t_,ypts,label= "True Soln")
+mp.plot(t_,ysol,label= "Numerical Solution")
+mp.plot(t_,ypts,label= "True Solutionn")
 mp.xlabel("t")
 mp.ylabel("y")
 mp.legend()
